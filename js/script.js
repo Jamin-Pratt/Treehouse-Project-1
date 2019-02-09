@@ -1,4 +1,4 @@
-/******************************************
+﻿/******************************************
 Treehouse Techdegree:
 FSJS project 1 - A Random Quote Generator
 ******************************************/
@@ -84,7 +84,8 @@ var citation = ''
 if(rand[citation] != undefined){
 citation = rand[citation];
 }
-document.getElementById('quote-box').innerHTML = '<p class="quote">' + quote +'</p>' + '<p class="source"' + author + '<span class="citation">' + citation + '</span><span class="year">' + year + '</span></p>';
+var html = '<p class="quote">' + quote +'</p>' + '<p class="source">' + author + '<span class="citation">' + citation + '</span><span class="year">' + year + '</span></p>';
+document.getElementById('quote-box').innerHTML = html;
 }
 
 printQuote();
