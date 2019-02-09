@@ -16,15 +16,15 @@ FSJS project 1 - A Random Quote Generator
       quote object.
 ***/
 var quotes = [
-  {source: "Andy Mineo", quote: "Make moves or make excuses"},
+  {source: "Andy Mineo", quote: "Make moves or make excuses", year: 2014},
   {source: "Lecrae", quote: "Before you complain today, be grateful you have breath to complain with."},
   {source: "Andy Mineo", quote: "It takes a moment to make memories and a lifetime to forget them.", year: 2014},
-  {source: "Trip Lee", quote: "The question is not whether or not you will face trials. The question is, how will you respond when you do?"},
-  {source: "tobyMac", quote: "Focusing on the negative only makes a difficult journey more difficult"},
-  {source: "Lecrae", quote: "If you live for people’s acceptance you will die from their rejection."},
-  {source: "Lecrae", quote: "If I'm wrong about God then I wasted my life. If you're wrong about God then you wasted your eternity."},
-  {source: "Lecrae", quote: "People will hurt you. But don't use that as an excuse for your poor choices, use it as motivation to make the right ones."},
-  {source: "Andy Mineo", quote: "Emotions change. Truth doesn't. What will you build your life upon?"},
+  {source: "Trip Lee", quote: "The question is not whether or not you will face trials. The question is, how will you respond when you do?",year: ''},
+  {source: "tobyMac", quote: "Focusing on the negative only makes a difficult journey more difficult",year: ''},
+  {source: "Lecrae", quote: "If you live for people’s acceptance you will die from their rejection.",year: ''},
+  {source: "Lecrae", quote: "If I'm wrong about God then I wasted my life. If you're wrong about God then you wasted your eternity.",year: ''},
+  {source: "Lecrae", quote: "People will hurt you. But don't use that as an excuse for your poor choices, use it as motivation to make the right ones.",year: ''},
+  {source: "Andy Mineo", quote: "Emotions change. Truth doesn't. What will you build your life upon?",year: ''},
   {source: "Andy Mineo", quote: "My biggest enemy is me and even I can't stop me", year: 2014}
 ]
 
@@ -76,15 +76,16 @@ var quote = rand[1];
 var author = rand[0];
 
 //checks for year
-var year = ''
-if(rand[year] != undefined){
-year = rand[year];
+var year = rand[2];
+
+
+var html = '<p class="quote">' + quote +'</p>' + '<p class="source">' + author ;
+if (year != ''){
+  html +=  '</span><span class="year">' + year + "</span></p>";
 }
-var citation = ''
-if(rand[citation] != undefined){
-citation = rand[citation];
+else{
+
 }
-var html = '<p class="quote">' + quote +'</p>' + '<p class="source">' + author + '<span class="citation">' + citation + '</span><span class="year">' + year + '</span></p>';
 document.getElementById('quote-box').innerHTML = html;
 }
 
